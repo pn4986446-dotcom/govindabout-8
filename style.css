@@ -979,3 +979,61 @@ footer {
     transform: none;
   }
 }
+/* === ELECTRIC BLUE & PURPLE UPGRADE === */
+:root {
+  --cyan: #48e5ff;
+  --blue: #397bff;
+  --purple: #a855f7;
+  --grad: linear-gradient(120deg, #48e5ff, #397bff, #b35cff);
+}
+
+body {
+  background-color: #030712;
+}
+
+a, button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a:focus-visible, button:focus-visible {
+  outline: 2px solid #48e5ff;
+  outline-offset: 4px;
+}
+
+.card:hover,
+.project-card:hover,
+.skill-card:hover,
+.interest-card:hover {
+  box-shadow: 0 0 24px rgba(72, 229, 255, 0.2);
+}
+
+.touch-ripple {
+  position: fixed;
+  z-index: 9999;
+  width: 14px;
+  height: 14px;
+  border: 2px solid #48e5ff;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(.2);
+  animation: touchRipple .7s ease-out forwards;
+}
+
+@keyframes touchRipple {
+  to {
+    transform: translate(-50%, -50%) scale(8);
+    opacity: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    min-height: auto;
+    padding-top: 115px;
+    padding-bottom: 64px;
+  }
+
+  button, a {
+    touch-action: manipulation;
+  }
+}
