@@ -177,3 +177,19 @@ document.addEventListener('DOMContentLoaded', () => {
   // Ensure page is visible
   document.body.style.opacity = '1';
 });
+
+/* Touch and click ripple effect */
+document.addEventListener("pointerdown", function (event) {
+  if (event.pointerType === "mouse" && event.button !== 0) return;
+
+  const ripple = document.createElement("span");
+  ripple.className = "touch-ripple";
+  ripple.style.left = event.clientX + "px";
+  ripple.style.top = event.clientY + "px";
+
+  document.body.appendChild(ripple);
+
+  ripple.addEventListener("animationend", function () {
+    ripple.remove();
+  }, { once: true });
+}, { passive: true });
